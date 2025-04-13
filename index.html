@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivam Patel | Graphic Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient-light: linear-gradient(to bottom right, #ffffff, #dcdcdc);
+      --bg-gradient-dark: linear-gradient(to bottom right, #6a00f4, #2300a3);
+      --text-color-light: #222;
+      --text-color-dark: #fff;
+      --section-bg-light: rgba(255, 255, 255, 0.8);
+      --section-bg-dark: rgba(255, 255, 255, 0.1);
+      --primary-btn-light: #ff0066;
+      --primary-btn-dark: #e60073;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0; padding: 0;
+      background: var(--bg-gradient-dark);
+      color: var(--text-color-dark);
+      transition: all 0.3s ease;
+    }
+    body.light-mode {
+      background: var(--bg-gradient-light);
+      color: var(--text-color-light);
+    }
+    .navbar {
+      position: sticky; top: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      display: flex; justify-content: center; gap: 2rem;
+      padding: 1rem; z-index: 1000;
+    }
+    .navbar a { color: #fff; text-decoration: none; font-weight: bold; }
+    body.light-mode .navbar { background: rgba(255, 255, 255, 0.6); }
+    body.light-mode .navbar a { color: #222; }
+    .hero {
+      text-align: center; padding: 5rem 2rem 2rem;
+    }
+    .hero h1 { font-size: 3rem; font-weight: 700; }
+    .hero p { font-size: 1.2rem; }
+    .section {
+      background: var(--section-bg-dark);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 1.5rem;
+      margin: 4rem auto;
+      max-width: 900px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+    }
+    body.light-mode .section {
+      background: var(--section-bg-light);
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .project {
+      background: #fff1;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .project:hover { transform: scale(1.05); }
+    .project img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .contact-icons a {
+      color: inherit;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+    .contact-btn, .download-btn {
+      margin-top: 1.5rem;
+      padding: 0.7rem 1.5rem;
+      background: var(--primary-btn-dark);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .contact-btn:hover, .download-btn:hover {
+      background: #c70062;
+    }
+    body.light-mode .contact-btn, body.light-mode .download-btn {
+      background: var(--primary-btn-light);
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 1rem; right: 1rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    body.light-mode .theme-toggle { color: #222; }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  <nav class="navbar">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero" data-aos="fade-down">
+    <h1>Shivam Patel</h1>
+    <p>Flashy & Creative Graphic Designer</p>
+  </section>
+
+  <section class="section" id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>I'm Shivam, a passionate graphic designer who brings ideas to life through bold visuals and modern design trends.</p>
+    <div style="text-align: center;">
+      <a href="resume.pdf" class="download-btn" download>Download CV</a>
+    </div>
+  </section>
+
+  <section class="section" id="projects" data-aos="fade-up">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project" data-aos="zoom-in">
+        <img src="https://via.placeholder.com/300x200.png?text=Project+1" alt="Project 1">
+        <h3>Brand Identity</h3>
+        <p>Modern logo, typography & palette</p>
+      </div>
+      <div class="project" data-aos="zoom-in">
+        <img src="https://via.placeholder.com/300x200.png?text=Project+2" alt="Project 2">
+        <h3>Social Media Kit</h3>
+        <p>Instagram & Facebook Creatives</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact" data-aos="fade-up" style="text-align: center;">
+    <h2>Contact Me</h2>
+    <div class="contact-icons">
+      <a href="mailto:youremail@example.com">Email</a>
+      <a href="https://instagram.com">Instagram</a>
+      <a href="https://linkedin.com">LinkedIn</a>
+    </div>
+    <button class="contact-btn">Send Message</button>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
+</body>
+</html>
